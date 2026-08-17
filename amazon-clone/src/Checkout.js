@@ -18,10 +18,11 @@ function Checkout() {
 
                 <div>
                     <h3>Hello, {user?.email}</h3>
-                    <h2 className="checkout__title">Your Shopping Bakset</h2>
+                    <h2 className="checkout__title">Your Shopping Basket</h2>
 
                     {basket.map(item => (
-                        <CheckoutProduct 
+                        <CheckoutProduct
+                            key={item.id}
                             id={item.id}
                             title={item.title}
                             image={item.image}
@@ -32,9 +33,9 @@ function Checkout() {
                 </div>
             </div>
 
-            <div className="checkout__right"
+            <div className="checkout__right">
                 <Subtotal />
-
+            </div>
         </div>
     );
 }
