@@ -3,7 +3,6 @@ import Header from './Header';
 import Home from './Home';
 import Login from './Login';
 import Checkout from './Checkout';
-import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
