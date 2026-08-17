@@ -11,11 +11,15 @@ jobs:
   build_and_preview:
     if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: amazon-clone
     steps:
       - uses: actions/checkout@v4
-      - run: npm run build
+      - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CLONE_PROJECT_1C2C3 }}
           projectId: clone-project-1c2c3
+          entryPoint: amazon-clone
