@@ -32,7 +32,7 @@ const reducer = (state, action) => {
 
             } else {
                 console.warn(
-                    "Can't remove product (id: ${action.id} as it's not in basket!"
+                    `Can't remove product (id: ${action.id}) as it's not in basket!`
                 )
             }
 

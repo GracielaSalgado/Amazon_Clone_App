@@ -30,11 +30,11 @@ function Product({ id, title, image, price, rating }) {
                     {Array(rating)
                         .fill()
                         .map((_, i) => ( //map is when you want to loop through an array and return something for each item in the array
-                            <p>🌟</p>
+                            <p key={i}>🌟</p>
                         ))}
                 </div>
             </div>
-            <img src={image} alt="" />
+            <img src={image} alt={title} />
             <button onClick={addToBasket}>Add to Basket</button>
         </div>
     );
